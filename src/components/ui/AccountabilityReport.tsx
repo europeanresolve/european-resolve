@@ -3,7 +3,9 @@ import { eventDetails } from "@/data/event";
 import styles from "./AccountabilityReport.module.css";
 
 const MERCH_PICKUP_URL = "https://maps.app.goo.gl/2sfQGd6XfAESa6nT9";
-const MERCH_CONTACT_EMAIL = "olena.kuzhym@european-resolve.org";
+const MERCH_CONTACT_EMAIL =
+  process.env.NEXT_PUBLIC_ACCOUNTABILITY_MERCH_CONTACT_EMAIL ??
+  "olena.kuzhym@european-resolve.org";
 
 const DEPLOYMENT_BULLET_KEYS = [
   "closed.deploymentUpdateBullet1",

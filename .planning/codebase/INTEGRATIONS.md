@@ -45,6 +45,7 @@ None. Static site with no user authentication.
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `NEXT_PUBLIC_EVENTS_API_URL` | No (has default) | Override events API endpoint |
+| `NEXT_PUBLIC_ACCOUNTABILITY_MERCH_CONTACT_EMAIL` | No (has default) | Merch/rewards contact on accountability report (`AccountabilityReport`) |
 
 ## Webhooks / Callbacks
 
