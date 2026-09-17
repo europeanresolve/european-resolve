@@ -7,12 +7,19 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "send-deployment-update": "node --import tsx src/send-deployment-update.ts",
-    "send-deployment-update:live": "node --env-file=.env --import tsx src/send-deployment-update.ts"
+    "send-deployment-update:live": "node --env-file=.env --import tsx src/send-deployment-update.ts",
+    "process-dmarc-reports": "node --import tsx src/process-dmarc-reports.ts",
+    "process-dmarc-reports:live": "node --env-file=.env --import tsx src/process-dmarc-reports.ts"
   },
   "dependencies": {
+    "fast-xml-parser": "^5.11.1",
+    "fflate": "^0.8.3",
+    "imapflow": "^2.0.5",
+    "mailparser": "^3.9.28",
     "nodemailer": "^9.0.3"
   },
   "devDependencies": {
+    "@types/mailparser": "^3.4.6",
     "@types/node": "^22.0.0",
     "@types/nodemailer": "^8.0.1",
     "tsx": "^4.19.0",

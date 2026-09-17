@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feedback>
+  <report_metadata>
+    <org_name>Microsoft Corporation</org_name>
+    <email>dmarc@microsoft.com</email>
+    <report_id>ms-report-001</report_id>
+    <date_range>
+      <begin>1735689600</begin>
+      <end>1735775999</end>
+    </date_range>
+  </report_metadata>
+  <policy_published>
+    <domain>european-resolve.org</domain>
+    <p>quarantine</p>
+  </policy_published>
+  <record>
+    <row>
+      <source_ip>192.0.2.10</source_ip>
+      <count>10</count>
+      <policy_evaluated>
+        <disposition>none</disposition>
+        <dkim>pass</dkim>
+        <spf>pass</spf>
+      </policy_evaluated>
+    </row>
+    <identifiers>
+      <header_from>european-resolve.org</header_from>
+    </identifiers>
+    <auth_results>
+      <dkim>
+        <domain>european-resolve.org</domain>
+        <result>pass</result>
+      </dkim>
+      <spf>
+        <domain>european-resolve.org</domain>
+        <result>pass</result>
+      </spf>
+    </auth_results>
+  </record>
+</feedback>
