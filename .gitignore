@@ -108,3 +108,17 @@ functions/.routes.json
 docs/sdd/
 docs/project/
 brev.md
+# Local symlinks into the strategy docs (absolute paths, machine-specific)
+.planning/intel/00_overview.md
+.planning/intel/01_core_definitions.md
+.planning/intel/02_brand_narrative.md
+.planning/intel/03_tone_of_voice.md
+.planning/intel/04_messaging_architecture.md
+.planning/intel/06_core_values.md
+.planning/intel/07_strategic_objectives.md
+.planning/intel/08_theory_of_change.md
+.planning/intel/colour-system.md
+.planning/intel/information-security-policy.md
+.planning/intel/mood-board.md
+.planning/intel/typography-system.md
+.planning/intel/visual-identity-proposal.md
