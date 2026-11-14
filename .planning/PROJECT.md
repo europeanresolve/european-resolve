@@ -1,5 +1,9 @@
 # Run for Ukraine 2026
 
+## Current State
+
+v1.0 shipped 2026-11-14 (phases 1-8, event completed, registration closed). Next: v1.1 post-event emails (phases 9-10).
+
 ## What This Is
 
 A charity run event platform at `european-resolve.org/events/2026-run-for-ukraine/` that lets participants register, create personal fundraising pages, and track collective progress toward a demining goal. All donations redirect to an external Monobank jar belonging to the beneficiary (Hurkit — charging stations for defenders). The platform never holds, routes, or reconciles donor money.
@@ -110,4 +114,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-07-28 after initialization*
+*Last updated: 2026-11-14 after v1.0 milestone*

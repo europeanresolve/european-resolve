@@ -2,20 +2,21 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-08-23T12:39:00.000Z"
+status: completed
+last_updated: "2026-11-14T05:27:58.621Z"
+last_activity: 2026-11-14 — Milestone v1.0 completed and archived
 progress:
   total_phases: 13
   completed_phases: 3
   total_plans: 38
-  completed_plans: 13
-  percent: 24
+  completed_plans: 12
+  percent: 23
 ---
 
 # Project State
 
 **Project:** Run for Ukraine 2026
-**Status:** Executing Phase 08
+**Status:** v1.0 milestone complete
 
 ## Project Reference
 
@@ -110,3 +111,14 @@ See: .planning/PROJECT.md (updated 2026-07-28)
 - Phase 8 added: Post-event registration closure — activate completed mode, backend guard, final stats snapshot
 - Phase 9 added: Post-event thank-you email — localized template and send to all paid participants
 - Phase 10 added: Opt-in beneficiary announcements — Hurkit charging station update email and Sheets-based send script
+
+## Current Position
+
+Phase: Milestone v1.0 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-11-14 — Milestone v1.0 completed and archived
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd:new-milestone
