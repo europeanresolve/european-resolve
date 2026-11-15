@@ -19,7 +19,7 @@ progress:
 
 See: .planning/PROJECT.md (updated 2026-11-15)
 
-**Core value:** Give European Resolve a proper About Us section (Mission, History, Team) in the main navigation, without breaking any existing team links.
+**Core value:** european-resolve.org is a credible, transparent public face for the organisation: mission, people and work in one place. Links to team pages and assets keep working.
 **Current focus:** Phase 11: About section mechanics (feature branch)
 
 ## Current Position

@@ -1,7 +1,7 @@
 # Requirements: European Resolve site, v1.1 About Us
 
 **Defined:** 2026-11-15
-**Core Value:** Give European Resolve a proper About Us section (Mission, History, Team) in the main navigation, without breaking any existing team links.
+**Core Value:** european-resolve.org is a credible, transparent public face for the organisation: mission, people and work in one place. Links to team pages and assets keep working.
 
 ## v1.1 Requirements
 

@@ -1,20 +1,22 @@
 <!-- GSD:project-start source:PROJECT.md -->
 ## Project
 
-**Run for Ukraine 2026**
+**European Resolve Website**
 
-A charity run event platform at `european-resolve.org/events/2026-run-for-ukraine/` that lets participants register, create personal fundraising pages, and track collective progress toward a demining goal. All donations redirect to an external Monobank jar belonging to the beneficiary (Hurkit — charging stations for defenders). The platform never holds, routes, or reconciles donor money.
+The `european-resolve.org` website of European Resolve (Brussels-based civil society organisation): organisation pages (home, team, events, privacy) plus the Run for Ukraine 2026 event hub at `/events/2026-run-for-ukraine/`. The event hub let participants register, create personal fundraising pages, and track collective progress; donations went to the beneficiary's external collection (Hurkit, charging stations for defenders). The platform never holds, routes, or reconciles donor money.
 
-**Core Value:** Participants can register and share personal fundraising pages that drive donations to the Monobank jar with full transparency about where money goes.
+**Core Value:** european-resolve.org is a credible, transparent public face for the organisation: mission, people and work in one place. Links to team pages and assets keep working.
 
 ### Constraints
 
 - **Static export**: Frontend pages must work as pre-rendered HTML (SEO, Cloudflare Pages)
-- **No payment processing**: Platform redirects to Monobank jar; never touches money
+- **Every push to `main` deploys**: Cloudflare Pages builds production from `main`; unreleased work stays on a branch
+- **Redirects via `public/_redirects` only**: static export cannot redirect; fragments (`#...`) never reach the server
+- **Stable public URLs**: team profiles and photos are linked from printed cards and email signatures, so moved paths need 301s
 - **GDPR**: Belgian NGO, data minimization, explicit consent for communications
 - **Existing design system**: Must use project's CSS Modules + tokens (no Tailwind, no CSS-in-JS)
-- **Google Sheets**: Backend writes registrations to Sheets (team's existing operational tool)
-- **Monobank API**: Jar balance may be UAH-denominated; EUR conversion approach needed
+- **No payment processing**: the site never touches money (v1.0 donations went to the beneficiary's external collection)
+
 <!-- GSD:project-end -->
 
 <!-- GSD:stack-start source:codebase/STACK.md -->

@@ -1,4 +1,4 @@
-# Run for Ukraine 2026
+# European Resolve Website
 
 ## Current State
 
@@ -22,7 +22,7 @@ The `european-resolve.org` website of European Resolve (Brussels-based civil soc
 
 ## Core Value
 
-Participants can register and share personal fundraising pages that drive donations to the Monobank jar with full transparency about where money goes.
+european-resolve.org is a credible, transparent public face for the organisation: mission, people and work in one place. Links to team pages and assets keep working.
 
 ## Requirements
 
@@ -51,6 +51,8 @@ Participants can register and share personal fundraising pages that drive donati
 
 ### Out of Scope
 
+v1.1 About Us exclusions live in `.planning/REQUIREMENTS.md`. The list below is v1.0 Run for Ukraine history.
+
 - Payment processing on the platform — Monobank jar handles all donations
 - Per-runner donation attribution — jar model provides only aggregate balance
 - Belgian tax certificates — funds never pass through the NGO
@@ -62,6 +64,10 @@ Participants can register and share personal fundraising pages that drive donati
 - Real PSP checkout for participation fees — decision deferred (Monobank jar for now)
 
 ## Context
+
+**Current site:** Fully static Next.js export on Cloudflare Pages (backend API removed after event closure). Org pages are English-only; event pages are localized (en, fr, nl, de, uk). Team profiles are linked from printed business cards; member photos are hotlinked from staff email signatures.
+
+### v1.0 Run for Ukraine (historical)
 
 **Event details:**
 - Date: 23 August 2026 (fixed)
@@ -95,11 +101,12 @@ Lovable prototype screenshots provide visual/UX reference. Implementation uses e
 ## Constraints
 
 - **Static export**: Frontend pages must work as pre-rendered HTML (SEO, Cloudflare Pages)
-- **No payment processing**: Platform redirects to Monobank jar; never touches money
+- **Every push to `main` deploys**: Cloudflare Pages builds production from `main`; unreleased work stays on a branch
+- **Redirects via `public/_redirects` only**: static export cannot redirect; fragments (`#...`) never reach the server
+- **Stable public URLs**: team profiles and photos are linked from printed cards and email signatures, so moved paths need 301s
 - **GDPR**: Belgian NGO, data minimization, explicit consent for communications
 - **Existing design system**: Must use project's CSS Modules + tokens (no Tailwind, no CSS-in-JS)
-- **Google Sheets**: Backend writes registrations to Sheets (team's existing operational tool)
-- **Monobank API**: Jar balance may be UAH-denominated; EUR conversion approach needed
+- **No payment processing**: the site never touches money (v1.0 donations went to the beneficiary's external collection)
 
 ## Key Decisions
 
