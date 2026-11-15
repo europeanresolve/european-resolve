@@ -3,10 +3,10 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: About Us
 status: planning
-last_updated: "2026-11-15T11:28:57.524Z"
+last_updated: "2026-11-15T12:00:00.000Z"
 last_activity: 2026-11-15
 progress:
-  total_phases: 0
+  total_phases: 2
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -15,111 +15,70 @@ progress:
 
 # Project State
 
-**Project:** Run for Ukraine 2026
-**Status:** v1.1 About Us, defining requirements
-
 ## Project Reference
 
 See: .planning/PROJECT.md (updated 2026-11-15)
 
-**Core value:** Participants can register and share personal fundraising pages that drive donations via WhyDonate with full transparency
-**Current focus:** v1.1 About Us (defining requirements)
-
-## Current Phase
-
-**Phase 8: Post-event registration closure**
-
-- Status: In Progress
-- Plans: 3/4 (Plan 04: 2/3 tasks — stopped at closure deploy checkpoint)
-- Current Plan: 08-04 Task 3 (closure deploy — awaiting human action)
-
-## Progress
-
-| Phase | Status | Plans | Progress |
-|-------|--------|-------|----------|
-| 1     | ●      | 4/4   | 100%     |
-| 2     | ●      | 3/3   | 100%     |
-| 2.1   | ●      | 4/4   | 100%     |
-| 3     | ●      | 4/4   | 100%     |
-| 4     | ●      | 4/4   | 100%     |
-| 5     | ◐      | 0/4   | 0%       |
-| 4.1   | ◐      | 0/2   | 0%       |
-| 6     | ●      | 3/3   | 100%     |
-| 7     | ●      | 3/3   | 100%     |
-| 8     | ◐      | 3/4   | 75%      |
-
-## Recent Activity
-
-- 2026-07-28: Project initialized
-- 2026-07-28: Codebase mapped
-- 2026-07-28: Research completed
-- 2026-07-28: Requirements defined (37 v1 requirements)
-- 2026-07-28: Roadmap created (4 phases, MVP mode)
-- 2026-07-28: Phase 1 context gathered (4 areas discussed)
-- 2026-07-28: Phase 1 UI-SPEC approved
-- 2026-07-28: Phase 1 plans created (4 plans)
-- 2026-07-28: Phase 1 executed — all 4 plans complete (typecheck ✓, build ✓)
-- 2026-07-29: Phase 2 verified complete — backend API (Hono/Sheets), frontend activation, CI/CD (typecheck ✓, build ✓)
-- 2026-07-29: Phase 2.1 verified complete — WhyDonate integration, payment confirmation flow
-- 2026-07-29: Phase 3 context gathered (3 areas discussed: photo storage, identity/edit, donor wall)
-- 2026-07-29: Phase 3 planned (4 plans in 2 waves: backend APIs, fundraiser pages, progress dashboard, donor wall)
-- 2026-07-29: Phase 3 executed — all 4 plans complete (backend typecheck ✓, frontend build ✓)
-- 2026-07-29: Phase 4 context gathered (3 areas discussed: i18n structure, post-event UX, archive content)
-- 2026-07-30: Phase 4 planned (4 plans in 2 waves: i18n infrastructure, string extraction, backend error codes, post-event mode)
-- 2026-07-30: Phase 4 executed — all 4 plans complete (typecheck ✓, backend typecheck ✓)
-- 2026-07-30: Phase 5 planned (4 plans in 2 waves: FR translations, UK translations, NL+DE translations, verification)
-- 2026-07-30: Phase 04.1 context gathered (2 areas discussed: SMTP deployment, fundraiser email gap)
-- 2026-07-31: Phase 6 context gathered (4 areas discussed: auto-confirm UX, fallback strategy, amount mismatch, pre-fill depth)
-- 2026-07-30: Phase 04.1 planned (2 plans in 1 wave: SMTP deploy config, fundraiser confirmation email)
-- 2026-07-31: Phase 6 planned (3 plans in 2 waves: backend amount-based confirmation, widget detection hook, auto-confirm UX)
-- 2026-07-31: Phase 6 executed — all 3 plans complete (typecheck ✓, build ✓)
-- 2026-08-08: Phase 7 Plan 01 executed — Vitest include extended for `*.spec.tsx` BDD tests (npm test: 13 files, 224 tests ✓)
-- 2026-08-08: Phase 7 Plan 02 executed — EventCard link behavior + Upcoming badge via TDD (npm test: 13 files, 262 tests ✓)
-- 2026-08-08: Phase 7 Plan 03 executed — Events DB row + Drive thumbnail + build verification (npm test: 262/262 ✓, static HTML verified)
-- 2026-08-23: Phase 8 Plan 01 executed — backend EVENT_STATUS write guards + closure tests (npm test: 286/286 ✓)
-- 2026-08-23: Phase 8 Plan 02 executed — register page ?token= exception for late payment (npm test: 289/289 ✓)
-- 2026-08-23: Phase 8 Plan 04 Task 1 verified — CI/deploy EVENT_STATUS wiring (commit 810d7e8)
-- 2026-08-23: Phase 8 Plan 04 Task 2 executed — D-19 AccountabilityReport conditional charging stat (RED f31d857, GREEN 22a8310; npm test: 299/299 ✓)
-- 2026-08-23: Phase 8 Plan 04 stopped at Task 3 closure deploy checkpoint (human action required)
-
----
-*Last updated: 2026-08-23 after Phase 8 Plan 04 Task 2 (checkpoint at Task 3)*
-
-## Decisions
-
-- Extended Vitest include rather than renaming events-page.spec.tsx to preserve BDD naming convention
-- Upcoming badge uses neutral black-05 background to distinguish from amber type badge
-- isEventUpcoming accepts optional now Date for deterministic unit tests
-- Organizer name typo in spreadsheet left as ops fix — not corrected in code
-- Default EVENT_STATUS to active when unset (safe for local dev and pre-closure production)
-- confirm-payment and read endpoints explicitly excluded from closure guards per D-06/D-11
-- Register page token exception: showClosedBanner = isCompleted && !hasToken; fundraise page unchanged
-- Token param gates register UI visibility only; authorization remains at API lookup
-- Snapshot script stdout-first JSON; --apply patches finalStats numeric fields only
-- chargingStations manual via --charging-stations CLI flag only
-- D-19: AccountabilityReport hides charging-stations stat when finalStats.chargingStations is 0
-
-## Accumulated Context
-
-### Roadmap Evolution
-
-- Phase 02.1 inserted after Phase 2: Replace Monobank jar with WhyDonate (URGENT)
-- Phase 04.1 inserted after Phase 4: Registration Confirmation Emails (URGENT)
-- Phase 6 added: WhyDonate Widget Auto-Detection — replace honour-system confirm button with DOM-based payment detection
-- Phase 06.1 inserted after Phase 6: Tier amount enforcement & effective-tier policy (URGENT)
-- Phase 7 added: Run for Ukraine Events Listing — add August 23 event to `/events` via Events DB spreadsheet, linked from dedicated event page data
-- Phase 8 added: Post-event registration closure — activate completed mode, backend guard, final stats snapshot
-- Phase 9 added: Post-event thank-you email — localized template and send to all paid participants
-- Phase 10 added: Opt-in beneficiary announcements — Hurkit charging station update email and Sheets-based send script
+**Core value:** Give European Resolve a proper About Us section (Mission, History, Team) in the main navigation, without breaking any existing team links.
+**Current focus:** Phase 11: About section mechanics (feature branch)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-11-15 — Milestone v1.1 started
+Phase: 11 of 12 (About section mechanics, feature branch)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-11-15 — v1.1 roadmap created (2 phases, 17/17 requirements mapped)
 
+Progress: [░░░░░░░░░░] 0%
 
-## Operator Next Steps
+## Performance Metrics
 
-- Start the next milestone with /gsd:new-milestone
+**Velocity:**
+- Total plans completed: 0 (v1.1)
+- Average duration: -
+- Total execution time: -
+
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| - | - | - | - |
+
+*Updated after each plan completion*
+
+## Accumulated Context
+
+### Decisions
+
+Decisions are logged in PROJECT.md Key Decisions table.
+Recent decisions affecting current work:
+
+- [v1.1]: Wait for copy, one release. Nothing user-visible ships until Mission copy, History copy and footer legal data are in hand. Phase 11 stays on a feature branch (Cloudflare preview only); Phase 12 is the single merge to `main`.
+- [v1.1]: Route move and `_redirects` go live in the same deploy (guaranteed by the single merge).
+- [v1.1]: Photo strategy Option B. Photos stay at `public/team/`; 7 explicit `/team/<slug>` 301 lines plus exact `/team` and `/team/` rules; no splat.
+- [v1.1]: `/#team` handled by a client-side `location.replace` hop on `/`; nav links straight to `/about`.
+- [v1.1]: Sitemap lists `/about` only; member pages stay unlisted (ADR-005).
+
+### Pending Todos
+
+None yet.
+
+### Blockers/Concerns
+
+- [Phase 12]: Blocked on org-supplied Mission copy, History copy and footer legal data (enterprise number, registered office, RPR/RPM court).
+- [Phase 12]: Exact URL printed on physical business cards (with/without `www.`, trailing slash) needed for the curl matrix.
+- [Phase 11/12]: Cloudflare zone-level redirect rules on the custom domain could pre-empt `_redirects`; needs someone with dashboard access.
+
+## Deferred Items
+
+Items acknowledged and deferred at milestone close, most recent first:
+
+| Category | Item | Status | Deferred At | Milestone |
+|----------|------|--------|-------------|-----------|
+| plan | 08-04 deploy wiring verify, D-19 zero-stat hide, closure ops checkpoint | known gap | 2026-11-14 | v1.0 |
+
+## Session Continuity
+
+Last session: 2026-11-15
+Stopped at: v1.1 roadmap created; next is `/gsd-plan-phase 11`
+Resume file: None

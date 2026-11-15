@@ -71,11 +71,29 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| ABOUT-01 | Phase 11 | Pending |
+| ABOUT-02 | Phase 11 | Pending |
+| ABOUT-03 | Phase 12 | Pending |
+| ABOUT-04 | Phase 12 | Pending |
+| ABOUT-05 | Phase 11 | Pending |
+| ABOUT-06 | Phase 11 | Pending |
+| NAV-01 | Phase 11 | Pending |
+| NAV-02 | Phase 11 | Pending |
+| LINK-01 | Phase 11 | Pending |
+| LINK-02 | Phase 11 | Pending |
+| LINK-03 | Phase 11 | Pending |
+| LINK-04 | Phase 11 | Pending |
+| SEO-01 | Phase 11 | Pending |
+| SEO-02 | Phase 11 | Pending |
+| LEGAL-01 | Phase 12 | Pending |
+| QA-01 | Phase 11 | Pending |
+| QA-02 | Phase 12 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 17 total
-- Mapped to phases: 0 (pending roadmap)
+- Mapped to phases: 17
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-11-15*
-*Last updated: 2026-11-15 after initial definition*
+*Last updated: 2026-11-15 after roadmap creation*
