@@ -1,29 +1,29 @@
 ---
-gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: completed
-last_updated: "2026-11-14T05:27:58.621Z"
-last_activity: 2026-11-14 — Milestone v1.0 completed and archived
+gsd_state_version: "1.0"
+milestone: v1.1
+milestone_name: About Us
+status: planning
+last_updated: "2026-11-15T11:28:57.524Z"
+last_activity: 2026-11-15
 progress:
-  total_phases: 13
-  completed_phases: 3
-  total_plans: 38
-  completed_plans: 12
-  percent: 23
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 **Project:** Run for Ukraine 2026
-**Status:** v1.0 milestone complete
+**Status:** v1.1 About Us, defining requirements
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-07-28)
+See: .planning/PROJECT.md (updated 2026-11-15)
 
 **Core value:** Participants can register and share personal fundraising pages that drive donations via WhyDonate with full transparency
-**Current focus:** Phase 08 — post-event-registration-closure-activate-completed-mode-back
+**Current focus:** v1.1 About Us (defining requirements)
 
 ## Current Phase
 
@@ -114,10 +114,11 @@ See: .planning/PROJECT.md (updated 2026-07-28)
 
 ## Current Position
 
-Phase: Milestone v1.0 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-11-14 — Milestone v1.0 completed and archived
+Status: Defining requirements
+Last activity: 2026-11-15 — Milestone v1.1 started
+
 
 ## Operator Next Steps
 

@@ -2,11 +2,23 @@
 
 ## Current State
 
-v1.0 shipped 2026-11-14 (phases 1-8, event completed, registration closed). Next: v1.1 post-event emails (phases 9-10).
+v1.0 shipped 2026-11-14 (phases 1-8, event completed, registration closed). The planned post-event emails (old phases 9-10: thank-you email, Hurkit deployment update blast) shipped outside GSD right after. The site is now fully static (backend API removed post-closure). Next: v1.1 About Us.
+
+## Current Milestone: v1.1 About Us
+
+**Goal:** Give European Resolve a proper About Us section (Mission, History, Team) in the main navigation, without breaking any existing team links.
+
+**Target features:**
+- New `/about` page with Mission (full), History, and Team (grid moved off the homepage) sections
+- Main nav "Team" replaced by "About us" linking to `/about`
+- Homepage About/Team sections replaced by a short mission teaser linking to `/about` (exact line decided in planning)
+- Team profiles move to `/about/team/[slug]`; Cloudflare `_redirects` 301s `/team/*` there and `/team` to `/about#team` (QR business cards keep working)
+- Legacy `/#team` links land on `/about#team` via a client-side hop on the homepage (fragments never reach the server)
+- Breadcrumbs, sitemap, and metadata reflect the new hierarchy
 
 ## What This Is
 
-A charity run event platform at `european-resolve.org/events/2026-run-for-ukraine/` that lets participants register, create personal fundraising pages, and track collective progress toward a demining goal. All donations redirect to an external Monobank jar belonging to the beneficiary (Hurkit — charging stations for defenders). The platform never holds, routes, or reconciles donor money.
+The `european-resolve.org` website of European Resolve (Brussels-based civil society organisation): organisation pages (home, team, events, privacy) plus the Run for Ukraine 2026 event hub at `/events/2026-run-for-ukraine/`. The event hub let participants register, create personal fundraising pages, and track collective progress; donations went to the beneficiary's external collection (Hurkit, charging stations for defenders). The platform never holds, routes, or reconciles donor money.
 
 ## Core Value
 
@@ -16,22 +28,26 @@ Participants can register and share personal fundraising pages that drive donati
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Event landing page with progress stats and two participation tracks — v1.0
+- ✓ Track A: Tier-based registration (Supporter/Champion/Patron) — v1.0
+- ✓ Track B: Self-service personal fundraising pages — v1.0
+- ✓ Fundraiser pages with collective progress, share buttons, donor wall — v1.0
+- ✓ Registration data persisted to Google Sheets — v1.0 (backend since removed post-closure)
+- ✓ Breadcrumb navigation — v1.0
+- ✓ GDPR-compliant data collection (consent, privacy notice) — v1.0
+- ✓ Transparent cause/logistics fee breakdown on tier cards — v1.0
+- ✓ Registration confirmation emails — v1.0
+- ✓ i18n for event pages (en, fr, nl, de, uk) — v1.0
+- ✓ Post-event thank-you email and Hurkit deployment update blast — shipped outside GSD after v1.0
 
 ### Active
 
-- [ ] Event landing page with live progress stats and two participation tracks
-- [ ] Track A: Tier-based registration (Supporter/Champion/Patron) with form submission
-- [ ] Track B: Self-service personal fundraising page creation (name, photo, message, goal)
-- [ ] Dynamic fundraiser pages with collective progress, share buttons, and donor wall
-- [ ] Live public dashboard (jar balance, goal %, participants, donors)
-- [ ] Registration data persisted to Google Sheets via GCP backend API
-- [ ] Breadcrumb navigation back to events list
-- [ ] Monobank jar redirect for all donation CTAs
-- [ ] GDPR-compliant data collection (consent checkboxes, privacy notice)
-- [ ] Transparent cause/logistics fee breakdown on tier cards
-- [ ] Automated registration confirmation (email or on-page)
-- [ ] i18n-ready structure (English content first, FR/UK later)
+- [ ] `/about` page with Mission, History, and Team sections
+- [ ] "About us" in main navigation replacing "Team"
+- [ ] Homepage mission teaser linking to `/about`
+- [ ] Team profiles at `/about/team/[slug]` with 301s from `/team/*` and `/team`
+- [ ] Legacy `/#team` links reach `/about#team`
+- [ ] Breadcrumbs, sitemap, metadata updated for the About hierarchy
 
 ### Out of Scope
 
@@ -95,6 +111,10 @@ Lovable prototype screenshots provide visual/UX reference. Implementation uses e
 | English first, i18n later | Ship faster; structure supports FR/UK addition without rewrite | — Pending |
 | Subpath routing | `/events/2026-run-for-ukraine/` keeps event within existing site hierarchy | — Pending |
 | No per-runner attribution (v1) | Jar model doesn't support it; can add self-reported pledges later | — Pending |
+| Mission on both homepage (short line) and `/about` (full) | Mission is the front door; About holds the depth | — Pending |
+| Team profiles move to `/about/team/[slug]` with 301s | Cleaner hierarchy; Cloudflare redirects keep QR cards and old links working | — Pending |
+| `/#team` handled client-side, not by Cloudflare | URL fragments never reach the server, so `_redirects` cannot match them | — Pending |
+| About Us copy (Mission, History) supplied by the team | Copy owned by the org; draft mission from strategic foundations is the placeholder | — Pending |
 
 ## Evolution
 
@@ -114,4 +134,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-11-14 after v1.0 milestone*
+*Last updated: 2026-11-15 after starting v1.1 About Us milestone*

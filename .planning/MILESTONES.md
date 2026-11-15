@@ -22,5 +22,6 @@ Closed with acknowledged gaps (no SUMMARY.md was written for any v1.0 plan; work
 
 - Phase 8, plan 08-04: deploy wiring verify, D-19 hide zero charging-stations stat, closure ops checkpoint (not marked done)
 - Plans in phases 1-5, 04.1, 06.1 are unchecked in the old roadmap although the work shipped
+- Planned v1.1 post-event phases 9-10 (thank-you email `e50fde3`, Hurkit deployment update blast `69c5a2f`) shipped outside GSD after the archive; v1.1 was reassigned to About Us
 
 ---
