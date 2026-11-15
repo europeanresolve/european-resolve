@@ -108,7 +108,8 @@ functions/.routes.json
 docs/sdd/
 docs/project/
 brev.md
-# Local symlinks into the strategy docs (absolute paths, machine-specific)
+# Local intel: strategy docs and notes, kept out of the public repo
+.planning/intel/about_us.md
 .planning/intel/00_overview.md
 .planning/intel/01_core_definitions.md
 .planning/intel/02_brand_narrative.md
