@@ -46,9 +46,21 @@
   font-weight: 500;
   color: rgb(245 242 235 / 0.8);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 120ms ease;
 }
 
 .links a:hover {
   color: #d4a012;
+}
+
+/* Header must stay at most 65px tall so the 4.0625rem clearance of profile and event pages holds. */
+@media (max-width: 22.5rem) {
+  .links {
+    gap: 1rem;
+  }
+
+  .wordmark {
+    font-size: 1rem;
+  }
 }
