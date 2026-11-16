@@ -4,17 +4,17 @@ milestone: v1.1
 milestone_name: About Us
 current_phase: 11
 current_phase_name: About section mechanics (feature branch)
-status: executing
-stopped_at: Completed 11-03-PLAN.md
-last_updated: "2026-11-16T06:33:32.995Z"
+status: verifying
+stopped_at: Completed 11-04-PLAN.md
+last_updated: "2026-11-16T08:33:48.094Z"
 last_activity: 2026-11-16
 last_activity_desc: Phase 11 execution started
-state_head: c7ada51c4611d7773f70a80d819bfa5b03e3c176
+state_head: 75af3e0057c712b9c9684e347349c314bb310e04
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
   percent: 0
 ---
 
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md (updated 2026-11-15)
 
 Phase: 11 (About section mechanics (feature branch)) — EXECUTING
 Plan: 4 of 4
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-11-16 — Phase 11 execution started
 
 Progress: [░░░░░░░░░░] 0%
@@ -57,6 +57,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 11 P01 | 4 min | 3 tasks | 10 files |
 | Phase 11 P02 | 4 min | 2 tasks | 5 files |
 | Phase 11 P03 | 3min | 2 tasks | 4 files |
+| Phase 11 P04 | 59 min | 3 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,8 @@ Recent decisions affecting current work:
 - [Phase 11]: Profile route moved with git mv to /about/team/[slug]; src/app/team/ deleted (D-01 Option B)
 - [Phase 11]: BusinessCard top padding 7rem -> 0.5rem with breadcrumbs above the card (D-15); visual check in 11-04
 - [Phase 11]: 11-03: _redirects guard compares one-line 'from to code' strings and rejects protocol-relative //host destinations; Task 2 RED was mutation-proven (splat, missing member, missing 301)
+- [Phase 11]: User deployed phase 11 to production (main a5a36ee) instead of a non-main preview, superseding D-02; 11-04 curl matrix 26/26 pass on european-resolve.org
+- [Phase 11]: Trailing-slash /team/<slug>/ 404s on production; fix (7 /team/<slug>/ 301 rules) routed to /gsd-plan-phase 11 --gaps
 
 ### Pending Todos
 
@@ -85,6 +88,7 @@ None yet.
 - [Phase 12]: Blocked on org-supplied Mission copy, History copy and footer legal data (enterprise number, registered office, RPR/RPM court).
 - [Phase 12]: Exact URL printed on physical business cards (with/without `www.`, trailing slash) needed for the curl matrix.
 - [Phase 11/12]: Cloudflare zone-level redirect rules on the custom domain could pre-empt `_redirects`; needs someone with dashboard access.
+- Production gap: /team/<slug>/ (trailing slash) returns 404 since the phase 11 deploy; add 7 /team/<slug>/ -> /about/team/<slug> 301 rules via --gaps
 
 ## Deferred Items
 
@@ -96,6 +100,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-16T06:33:32.975Z
-Stopped at: Completed 11-03-PLAN.md
+Last session: 2026-11-16T08:33:48.074Z
+Stopped at: Completed 11-04-PLAN.md
 Resume file: None

@@ -10,23 +10,23 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 ### About page
 
 - [x] **ABOUT-01**: Visitor can open `/about` and read Mission, History, and Team sections, in that order
-- [ ] **ABOUT-02**: Each section has a stable anchor (`#mission`, `#history`, `#team`); jumping to one keeps its heading visible below the fixed nav
+- [x] **ABOUT-02**: Each section has a stable anchor (`#mission`, `#history`, `#team`); jumping to one keeps its heading visible below the fixed nav
 - [ ] **ABOUT-03**: Mission section shows the final org-supplied mission copy
 - [ ] **ABOUT-04**: History section shows the org-supplied history copy
 - [x] **ABOUT-05**: Team section shows every member as a card linking to `/about/team/<slug>`
-- [ ] **ABOUT-06**: Visitor can open a member profile at `/about/team/<slug>` (business card and QR unchanged) with breadcrumbs Home > About us > Name
+- [x] **ABOUT-06**: Visitor can open a member profile at `/about/team/<slug>` (business card and QR unchanged) with breadcrumbs Home > About us > Name
 
 ### Navigation & homepage
 
-- [ ] **NAV-01**: Main nav shows "About us" linking to `/about`, replacing "Team"
+- [x] **NAV-01**: Main nav shows "About us" linking to `/about`, replacing "Team"
 - [x] **NAV-02**: Homepage shows a short mission teaser linking to `/about`; the About and Team blocks are no longer on the homepage
 
 ### Legacy links
 
-- [ ] **LINK-01**: `/team/<slug>` for each of the 7 existing members 301s to `/about/team/<slug>` (printed business cards keep working)
-- [ ] **LINK-02**: `/team` and `/team/` 301 to `/about#team`
-- [ ] **LINK-03**: Visitors arriving at `/#team` land on `/about#team` without trapping the Back button
-- [ ] **LINK-04**: Member photos at `/team/<slug>.png` keep loading directly with no redirect (email signatures keep working)
+- [x] **LINK-01**: `/team/<slug>` for each of the 7 existing members 301s to `/about/team/<slug>` (printed business cards keep working)
+- [x] **LINK-02**: `/team` and `/team/` 301 to `/about#team`
+- [x] **LINK-03**: Visitors arriving at `/#team` land on `/about#team` without trapping the Back button
+- [x] **LINK-04**: Member photos at `/team/<slug>.png` keep loading directly with no redirect (email signatures keep working)
 
 ### SEO
 
@@ -72,17 +72,17 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | ABOUT-01 | Phase 11 | Complete |
-| ABOUT-02 | Phase 11 | Pending |
+| ABOUT-02 | Phase 11 | Complete |
 | ABOUT-03 | Phase 12 | Pending |
 | ABOUT-04 | Phase 12 | Pending |
 | ABOUT-05 | Phase 11 | Complete |
-| ABOUT-06 | Phase 11 | Pending |
-| NAV-01 | Phase 11 | Pending |
+| ABOUT-06 | Phase 11 | Complete |
+| NAV-01 | Phase 11 | Complete |
 | NAV-02 | Phase 11 | Complete |
-| LINK-01 | Phase 11 | Pending |
-| LINK-02 | Phase 11 | Pending |
-| LINK-03 | Phase 11 | Pending |
-| LINK-04 | Phase 11 | Pending |
+| LINK-01 | Phase 11 | Complete |
+| LINK-02 | Phase 11 | Complete |
+| LINK-03 | Phase 11 | Complete |
+| LINK-04 | Phase 11 | Complete |
 | SEO-01 | Phase 11 | Complete |
 | SEO-02 | Phase 11 | Complete |
 | LEGAL-01 | Phase 12 | Pending |
