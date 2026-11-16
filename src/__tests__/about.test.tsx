@@ -69,9 +69,9 @@ describe("/about page", () => {
 
   it("links every Team card to /about/team/<slug>, distinct, in members order", () => {
     const { container } = render(<AboutPage />);
-    const hrefs = Array.from(
-      container.querySelectorAll("section#team a"),
-    ).map((a) => a.getAttribute("href"));
+    const hrefs = Array.from(container.querySelectorAll("section#team a")).map(
+      (a) => a.getAttribute("href"),
+    );
     expect(hrefs).toEqual(members.map((m) => "/about/team/" + m.slug));
     expect(new Set(hrefs).size).toBe(members.length);
   });
@@ -128,5 +128,40 @@ describe("homepage", () => {
     );
     expect(String(homeMeta.title)).not.toContain(EM_DASH);
     expect(String(homeMeta.description)).not.toContain(EM_DASH);
+  });
+});
+
+describe("LegacyHashRedirect hop (LINK-03)", () => {
+  const realLocation = window.location;
+  const stubLocation = (hash: string, search = "") => {
+    const replace = vi.fn();
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { hash, search, replace },
+    });
+    return replace;
+  };
+
+  afterEach(() => {
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: realLocation,
+    });
+  });
+
+  it.each([
+    ["#team", "/about#team"],
+    ["#about", "/about#mission"],
+  ])("homepage at %s replaces history with %s", (hash, target) => {
+    const replace = stubLocation(hash);
+    render(<Home />);
+    expect(replace).toHaveBeenCalledTimes(1);
+    expect(replace).toHaveBeenCalledWith(target);
+  });
+
+  it.each(["", "#mission"])("homepage at %j does not redirect", (hash) => {
+    const replace = stubLocation(hash);
+    render(<Home />);
+    expect(replace).not.toHaveBeenCalled();
   });
 });
