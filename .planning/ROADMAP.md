@@ -52,9 +52,12 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
+**Wave 1**
 - [ ] 11-01-PLAN.md — /about page with final copy, nav "About us", team card links, homepage teaser, legacy /#team and /#about hop
 - [ ] 11-02-PLAN.md — Profile route move to /about/team/<slug> with breadcrumbs and canonicals; sitemap lists /about
 - [ ] 11-03-PLAN.md — public/_redirects legacy team rules, redirect guard tests, Entry Points docs
+
+**Wave 2** *(blocked on Wave 1 completion)*
 - [ ] 11-04-PLAN.md — Local release gate, human push to a feature branch, Cloudflare preview curl matrix, production-untouched check
 
 **UI hint**: yes
