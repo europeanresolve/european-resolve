@@ -30,8 +30,8 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 
 ### SEO
 
-- [ ] **SEO-01**: `/about` and profile pages have title, description, and canonical URL at the new address
-- [ ] **SEO-02**: Sitemap lists `/about`; member pages stay unlisted
+- [x] **SEO-01**: `/about` and profile pages have title, description, and canonical URL at the new address
+- [x] **SEO-02**: Sitemap lists `/about`; member pages stay unlisted
 
 ### Legal
 
@@ -83,8 +83,8 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 | LINK-02 | Phase 11 | Pending |
 | LINK-03 | Phase 11 | Pending |
 | LINK-04 | Phase 11 | Pending |
-| SEO-01 | Phase 11 | Pending |
-| SEO-02 | Phase 11 | Pending |
+| SEO-01 | Phase 11 | Complete |
+| SEO-02 | Phase 11 | Complete |
 | LEGAL-01 | Phase 12 | Pending |
 | QA-01 | Phase 11 | Pending |
 | QA-02 | Phase 12 | Pending |

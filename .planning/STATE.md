@@ -5,16 +5,16 @@ milestone_name: About Us
 current_phase: 11
 current_phase_name: About section mechanics (feature branch)
 status: executing
-stopped_at: Completed 11-01-PLAN.md
-last_updated: "2026-11-16T06:21:55.738Z"
+stopped_at: Completed 11-02-PLAN.md
+last_updated: "2026-11-16T06:28:07.179Z"
 last_activity: 2026-11-16
 last_activity_desc: Phase 11 execution started
-state_head: a77f84dd9a7c4076f5d3ec3ac010bf085763f532
+state_head: 4640364db5b777a2b49ce03764988c0163361c68
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 4
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-11-15)
 ## Current Position
 
 Phase: 11 (About section mechanics (feature branch)) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-11-16 — Phase 11 execution started
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 11 P01 | 4 min | 3 tasks | 10 files |
+| Phase 11 P02 | 4 min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [v1.1]: Sitemap lists `/about` only; member pages stay unlisted (ADR-005).
 - [Phase 11]: Legacy hash hop uses a Map lookup so prototype-like hashes (#constructor, #__proto__) return null
 - [Phase 11]: TDD RED commits may carry a minimal stub so RED fails on assertions, not missing imports
+- [Phase 11]: Profile route moved with git mv to /about/team/[slug]; src/app/team/ deleted (D-01 Option B)
+- [Phase 11]: BusinessCard top padding 7rem -> 0.5rem with breadcrumbs above the card (D-15); visual check in 11-04
 
 ### Pending Todos
 
@@ -91,6 +94,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-16T06:21:55.721Z
-Stopped at: Completed 11-01-PLAN.md
+Last session: 2026-11-16T06:28:07.161Z
+Stopped at: Completed 11-02-PLAN.md
 Resume file: None
