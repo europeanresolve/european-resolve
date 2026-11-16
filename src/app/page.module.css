@@ -59,6 +59,12 @@
   margin-right: auto;
 }
 
+.more {
+  max-width: none;
+  text-align: center;
+  margin-top: 0;
+}
+
 .moreLink {
   font-size: 1rem;
   font-weight: 400;

@@ -21,7 +21,7 @@ export default function Home() {
           <p className={styles.because}>
             {"We exist to turn Europe's concern into resolve, and resolve into action."}
           </p>
-          <p>
+          <p className={styles.more}>
             <Link href="/about" className={styles.moreLink}>
               More about us
             </Link>
