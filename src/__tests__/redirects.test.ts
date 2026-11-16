@@ -30,6 +30,37 @@ describe("_redirects", () => {
     expect(lines).toContain("/team/ /about#team 301");
   });
 
+  it("every rule is `from to 301` (no code means Cloudflare ships a 302)", () => {
+    for (const r of rules) {
+      expect(r.length, r.join(" ")).toBe(3);
+      expect(r[2], r.join(" ")).toBe("301");
+    }
+  });
+
+  it("has no /team splat, placeholder or .png source (photos must not redirect)", () => {
+    for (const [from] of rules) {
+      expect(from.startsWith("/team/") && /[*:]/.test(from), from).toBe(false);
+      expect(from.endsWith(".png"), from).toBe(false);
+    }
+  });
+
+  it("no rule redirects to itself", () => {
+    for (const [from, to] of rules) {
+      expect(to.split("#")[0], from).not.toBe(from);
+    }
+  });
+
+  it("every destination is a same-origin path", () => {
+    for (const [, to] of rules) {
+      // "//host" is protocol-relative, i.e. external.
+      expect(/^\/(?!\/)/.test(to), to).toBe(true);
+    }
+  });
+
+  it("no two rules share a source (top-most wins would shadow one)", () => {
+    expect(new Set(rules.map(([from]) => from)).size).toBe(rules.length);
+  });
+
   it("keeps the /r4u short link", () => {
     expect(lines).toContain(
       "/r4u/:slug /events/2026-run-for-ukraine/fundraise/:slug 301",
