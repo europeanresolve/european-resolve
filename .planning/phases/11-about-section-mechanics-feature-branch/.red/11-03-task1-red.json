@@ -1,0 +1,10 @@
+{
+  "command": "npm run --silent test -- --reporter=tap-flat src/__tests__/redirects.test.ts",
+  "exitCode": 1,
+  "output": "TAP version 13\n1..4\nnot ok 1 - src/__tests__/redirects.test.ts > _redirects > parses at least 10 rules # time=2.40ms\n    ---\n    error:\n        name: \"AssertionError\"\n        message: \"expected 1 to be greater than or equal to 10\"\n    at: \"/Users/serhiy/orca/workspaces/european-resolve/pinniped/src/__tests__/redirects.test.ts:19:26\"\n    ...\nnot ok 2 - src/__tests__/redirects.test.ts > _redirects > has a /team/<slug> rule for every member # time=1.14ms\n    ---\n    error:\n        name: \"AssertionError\"\n        message: \"expected [ Array(1) ] to include '/team/michael-desloover /about/team/m\u2026'\"\n    at: \"/Users/serhiy/orca/workspaces/european-resolve/pinniped/src/__tests__/redirects.test.ts:24:21\"\n    ...\nnot ok 3 - src/__tests__/redirects.test.ts > _redirects > sends /team and /team/ to /about\\#team # time=0.26ms\n    ---\n    error:\n        name: \"AssertionError\"\n        message: \"expected [ Array(1) ] to include '/team /about#team 301'\"\n    at: \"/Users/serhiy/orca/workspaces/european-resolve/pinniped/src/__tests__/redirects.test.ts:29:19\"\n    ...\nok 4 - src/__tests__/redirects.test.ts > _redirects > keeps the /r4u short link # time=0.13ms\n",
+  "targetTest": "src/__tests__/redirects.test.ts > _redirects > has a /team/<slug> rule for every member",
+  "targetFile": "src/__tests__/redirects.test.ts",
+  "expected": "lines contain '/team/michael-desloover /about/team/michael-desloover 301' (and one such rule per member)",
+  "actual": "public/_redirects has only the /r4u rule; no /team rule present (1 parsed rule)",
+  "semanticAssessment": "Target executed and failed on the planned toContain assertion: public/_redirects has no /team/<slug> rules yet. 'parses at least 10 rules' (1 rule) and 'sends /team and /team/' fail for the same reason. 'keeps the /r4u short link' passes by design: it guards the existing rule. No load, syntax or fixture faults."
+}
