@@ -1,7 +1,8 @@
 ---
 phase: "11"
 slug: "about-section-mechanics-feature-branch"
-status: draft
+status: approved
+reviewed_at: "2026-11-16"
 shadcn_initialized: false
 preset: none
 created: "2026-11-16"
@@ -200,21 +201,23 @@ Drift guard (recommended in CONTEXT.md discretion, adopted here): a test asserts
 
 ## UI Considerations
 
-Applicable state considerations resolved: 9 covered, 2 backstop, 0 unresolved
+Probe: 7 elements, 26 applicable considerations (1 unclassified). Resolved: 24 explicit, 2 backstop, 0 unresolved. Kinds confirmed by the user (none missed); resolutions accepted 2026-11-16.
 
 | Category | Element(s) | Status | Resolution / Reason |
 |----------|------------|--------|---------------------|
-| empty | Team grid (list-collection) | ✅ covered | Not reachable: grid maps the static `members` array (7 entries) at build time; see Copywriting "Empty state" rows. |
-| loading | Team grid, nav, `/about` content | ✅ covered | Not reachable: static export, all content is in pre-rendered HTML; no loading state is rendered. |
-| error | Team grid, profile page | ✅ covered | No fetch on these pages; an unknown `/about/team/<slug>` renders the existing `notFound()` 404 (see Copywriting "Error state"). |
-| populated | Team grid | ✅ covered | 7 cards render in the existing 3 / 2 / 1 column grid at > 64rem / 40-64rem / < 40rem, identical to today's homepage Team section. |
-| zero-one-many | Team grid | ✅ covered | Fixed count of 7; heading is the collective noun "Team", so no singular/plural copy branch exists. |
-| partial | Team grid | ✅ covered | `Member` type requires name, title and photo (typed `satisfies` data); no partial card state exists. |
-| overflow | Breadcrumbs (nav) on profile page | ✅ covered | Existing `.list` uses `flex-wrap: wrap`; a long member name wraps to a second line, never clips. |
-| long-text | Mission lead, History paragraphs (static-content) | ✅ covered | Copy is fixed and final; `.aboutText` caps measure at 65ch inside a 42rem column, `.lead` and headings use `text-wrap: balance`, nothing truncates. |
-| long-text | Profile breadcrumb current item, `MemberCard` name | ✅ covered | Names wrap (`text-wrap: balance` on `MemberCard` name, flex-wrap on breadcrumbs); no ellipsis anywhere. |
-| overflow | Nav links after "Team" -> "About us" (nav) | 🧪 backstop | Label grows from 4 to 8 characters; estimated row width is ~353px, which fits at 360px and up but may wrap "About us" onto two lines at 320px. On the preview, check the nav at 320px width. If it wraps or overflows, apply exactly this in `Nav.module.css`: `.links a { white-space: nowrap; }` plus `@media (max-width: 22.5rem) { .links { gap: 1rem; } .wordmark { font-size: 1.125rem; } }`. |
-| long-text | Profile page vertical position (BusinessCard below Breadcrumbs) | 🧪 backstop | Photo top must sit at or above today's 112px from the viewport top (target ~110px). Verify visually on the Cloudflare preview at desktop and 375px widths (D-15). |
+| empty | Team grid (E5), profile page (E6) | ✅ resolved (explicit) | Not reachable: grid maps the static `members` array (7 entries) at build time; profile pages exist only for `generateStaticParams()` slugs. See Copywriting "Empty state" rows. |
+| loading | Nav (E1), Team grid (E5), profile page (E6) | ✅ resolved (explicit) | Not reachable: static export, all content is in pre-rendered HTML; no loading state is rendered. |
+| error | Nav (E1), Team grid (E5), profile page (E6) | ✅ resolved (explicit) | No fetch on these pages; an unknown `/about/team/<slug>` renders the existing `notFound()` 404 (see Copywriting "Error state"). |
+| populated | Team grid (E5), profile page (E6) | ✅ resolved (explicit) | 7 cards render in the existing 3 / 2 / 1 column grid at > 64rem / 40-64rem / < 40rem, identical to today's homepage Team section; profile shows Breadcrumbs then the unchanged BusinessCard. |
+| zero-one-many | Team grid (E5), breadcrumbs (E6) | ✅ resolved (explicit) | Fixed count of 7; heading is the collective noun "Team", so no singular/plural copy branch exists. Breadcrumbs always have exactly 3 items. |
+| partial | Team grid (E5), profile page (E6) | ✅ resolved (explicit) | `Member` type requires name, title and photo (typed `satisfies` data); no partial card state exists. |
+| overflow | Breadcrumbs (E6) | ✅ resolved (explicit) | Existing `.list` uses `flex-wrap: wrap`; a long member name wraps to a second line, never clips. |
+| overflow / long-text | Homepage hero teaser + "More about us" (E2) | ✅ resolved (explicit) | Teaser reuses `.because` inside the existing `.heroInner` measure; text wraps, nothing truncates. Link is a short fixed label. |
+| overflow / long-text | Mission lead + body, History paragraphs (E3, E4) | ✅ resolved (explicit) | Copy is fixed and final; `.aboutText` caps measure at 65ch inside a 42rem column, `.lead` and headings use `text-wrap: balance`, nothing truncates. |
+| long-text | Profile breadcrumb current item, `MemberCard` name (E5, E6) | ✅ resolved (explicit) | Names wrap (`text-wrap: balance` on `MemberCard` name, flex-wrap on breadcrumbs); no ellipsis anywhere. |
+| overflow / long-text | Nav "About us" label (E1) | 🧪 resolved (backstop) | `{ statement: "Nav row fits without wrapping \"About us\" at 320px width; if it wraps or overflows, apply `.links a { white-space: nowrap; }` plus `@media (max-width: 22.5rem) { .links { gap: 1rem; } .wordmark { font-size: 1.125rem; } }` in Nav.module.css", verification: backstop }` (visual check on the Cloudflare preview) |
+| long-text | Profile page vertical position (E6) | 🧪 resolved (backstop) | `{ statement: "BusinessCard photo top sits at or above today's 112px from the viewport top (target ~110px) at desktop and 375px widths", verification: backstop }` (visual check on the Cloudflare preview, D-15) |
+| unclassified | Legacy hash hop (E7) | ✅ resolved (explicit, manual review) | Renders nothing. Behaviour is fixed by the Interaction Contract: exact-match `/#team` -> `/about#team`, `/#about` -> `/about#mission`, query preserved, `location.replace` so Back skips the `/#team` entry. Verified on the preview per ROADMAP success criterion 3. |
 
 ---
 
@@ -239,12 +242,12 @@ Applicable state considerations resolved: 9 covered, 2 backstop, 0 unresolved
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
-- [ ] Dimension 7 Inventory Provenance: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: FLAG (non-blocking: inherited 20/40/56/96/112px from moved CSS; 65px nav clearance matches `.eventRoot`; optional `--nav-height` token)
+- [x] Dimension 6 Registry Safety: PASS
+- [x] Dimension 7 Inventory Provenance: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-11-16 (gsd-ui-checker; 1 non-blocking FLAG)
