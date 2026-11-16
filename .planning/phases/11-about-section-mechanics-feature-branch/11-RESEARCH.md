@@ -510,13 +510,16 @@ Probed this session: `render(await TeamMemberPage({ params: Promise.resolve({ sl
 | A4 | jsdom `window.location.replace` cannot be spied | Hop pattern | None; pure-function design works regardless |
 | A5 | Which branch to execute on: the existing `ZioHimself/feat-about-us-section` (worktree `gourami`, at `origin/main` `ed57153`, behind this branch's 5 planning commits) or the current `ZioHimself/chore-copy-planning-intel` | Pitfall 7 | Work lands on the wrong branch or planning commits are missing on the preview branch; harmless but confusing |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Which branch carries Phase 11 code?**
+1. **Which branch carries Phase 11 code?** RESOLVED
    - Known: current branch `ZioHimself/chore-copy-planning-intel` has no upstream and is 5 planning commits ahead of `origin/main`; a `ZioHimself/feat-about-us-section` branch exists at `origin/main`.
    - Recommendation: planner adds a first-task checkpoint asking the user; default to executing on the current branch and having the human push it under the feature name.
-2. **Preview URL.** Taken from the Cloudflare dashboard or the GitHub commit status after the push; set as `P` in the curl loop.
-3. **Trailing-slash and printed-card URL form.** Probe `/team/<slug>/` on the preview; add lines only if it 404s.
+   - Resolution: plans 11-01..11-03 execute on the current branch; 11-04 Task 2 (blocking `checkpoint:human-action`) has the human push HEAD under a non-main name of their choice (D-02), and 11-04 Task 3's git check fails if the branch is `main`, if HEAD is an ancestor of `origin/main`, or if the remote branch head differs from local HEAD.
+2. **Preview URL.** RESOLVED. Taken from the Cloudflare dashboard or the GitHub commit status after the push; set as `P` in the curl loop.
+   - Resolution: the human returns it in the 11-04 Task 2 resume signal (`branch=... url=...`); 11-04 Task 3 exports it as `PREVIEW_URL` and sets `P` from it in the matrix.
+3. **Trailing-slash and printed-card URL form.** RESOLVED. Probe `/team/<slug>/` on the preview; add lines only if it 404s.
+   - Resolution: 11-04 Task 3 Step 3 probes `/team/michael-desloover/` on the preview and records status and Location; a 404 is filed as a gap for `/gsd-plan-phase 11 --gaps` with the known 7-line fix (A3).
 
 ## Environment Availability
 
