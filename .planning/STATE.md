@@ -5,16 +5,16 @@ milestone_name: About Us
 current_phase: 11
 current_phase_name: About section mechanics (feature branch)
 status: executing
-stopped_at: Completed 11-02-PLAN.md
-last_updated: "2026-11-16T06:28:07.179Z"
+stopped_at: Completed 11-03-PLAN.md
+last_updated: "2026-11-16T06:33:32.995Z"
 last_activity: 2026-11-16
 last_activity_desc: Phase 11 execution started
-state_head: 4640364db5b777a2b49ce03764988c0163361c68
+state_head: c7ada51c4611d7773f70a80d819bfa5b03e3c176
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-11-15)
 ## Current Position
 
 Phase: 11 (About section mechanics (feature branch)) — EXECUTING
-Plan: 3 of 4
+Plan: 4 of 4
 Status: Ready to execute
 Last activity: 2026-11-16 — Phase 11 execution started
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0%
 |------|----------|-------|-------|
 | Phase 11 P01 | 4 min | 3 tasks | 10 files |
 | Phase 11 P02 | 4 min | 2 tasks | 5 files |
+| Phase 11 P03 | 3min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,7 @@ Recent decisions affecting current work:
 - [Phase 11]: TDD RED commits may carry a minimal stub so RED fails on assertions, not missing imports
 - [Phase 11]: Profile route moved with git mv to /about/team/[slug]; src/app/team/ deleted (D-01 Option B)
 - [Phase 11]: BusinessCard top padding 7rem -> 0.5rem with breadcrumbs above the card (D-15); visual check in 11-04
+- [Phase 11]: 11-03: _redirects guard compares one-line 'from to code' strings and rejects protocol-relative //host destinations; Task 2 RED was mutation-proven (splat, missing member, missing 301)
 
 ### Pending Todos
 
@@ -94,6 +96,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-16T06:28:07.161Z
-Stopped at: Completed 11-02-PLAN.md
+Last session: 2026-11-16T06:33:32.975Z
+Stopped at: Completed 11-03-PLAN.md
 Resume file: None

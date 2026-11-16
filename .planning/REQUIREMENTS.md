@@ -39,7 +39,7 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 
 ### Verification
 
-- [ ] **QA-01**: Guard tests assert one redirect line per member, no `/team/*` splat, explicit 301 on every rule, no internal `/#team` links, and no em dashes in new copy
+- [x] **QA-01**: Guard tests assert one redirect line per member, no `/team/*` splat, explicit 301 on every rule, no internal `/#team` links, and no em dashes in new copy
 - [ ] **QA-02**: Redirects verified with curl on a Cloudflare preview deploy before merging to `main`, including that `/r4u/:slug` still works
 
 ## Future Requirements
@@ -86,7 +86,7 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 | SEO-01 | Phase 11 | Complete |
 | SEO-02 | Phase 11 | Complete |
 | LEGAL-01 | Phase 12 | Pending |
-| QA-01 | Phase 11 | Pending |
+| QA-01 | Phase 11 | Complete |
 | QA-02 | Phase 12 | Pending |
 
 **Coverage:**
