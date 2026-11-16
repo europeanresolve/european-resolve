@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 import AboutPage, { metadata } from "@/app/about/page";
+import Home, { metadata as homeMeta } from "@/app/page";
 import { members } from "@/data/members";
 
 vi.mock("next/link", () => ({
@@ -90,5 +91,42 @@ describe("/about page", () => {
     expect(container.textContent).not.toContain(EM_DASH);
     expect(String(metadata.title)).not.toContain(EM_DASH);
     expect(String(metadata.description)).not.toContain(EM_DASH);
+  });
+});
+
+describe("homepage", () => {
+  it("renders the Mission lead teaser and More about us link, no #about or #team", () => {
+    const { container } = render(<Home />);
+    expect(screen.getByText(LEAD)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "More about us" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(container.querySelector("#about")).toBeNull();
+    expect(container.querySelector("#team")).toBeNull();
+    expect(
+      screen.queryByText(/Research, dialogue, and civic action/),
+    ).toBeNull();
+  });
+
+  it("teaser matches the /about Mission lead (drift guard)", () => {
+    const { container: about } = render(<AboutPage />);
+    const lead = about.querySelector("#mission p")?.textContent;
+    cleanup();
+    const { container: home } = render(<Home />);
+    const teaser = home.querySelector("h1 + p")?.textContent;
+    expect(lead).toBe(LEAD);
+    expect(teaser).toBe(LEAD);
+  });
+
+  it("contains no em dash and keeps its metadata", () => {
+    const { container } = render(<Home />);
+    expect(container.textContent).not.toContain(EM_DASH);
+    expect(homeMeta.title).toBe("European Resolve");
+    expect(homeMeta.description).toBe(
+      "Research, dialogue, and civic action to reinforce European security and democracy.",
+    );
+    expect(String(homeMeta.title)).not.toContain(EM_DASH);
+    expect(String(homeMeta.description)).not.toContain(EM_DASH);
   });
 });
