@@ -2,11 +2,12 @@
 phase: "11"
 slug: "about-section-mechanics-feature-branch"
 # status lifecycle: draft (seeded by plan-phase) → validated (set by validate-phase §6)
-# audit-milestone §5.5 distinguishes NOT-VALIDATED (draft) from PARTIAL (validated + nyquist_compliant: false) (#2117)
-status: draft
-nyquist_compliant: false
-wave_0_complete: false
+# audit-milestone §5.5 distinguishes NOT-VALIDATED (draft) from PARTIAL (validated + nyquist_compliant: true) (#2117)
+status: validated
+nyquist_compliant: true
+wave_0_complete: true
 created: "2026-11-16"
+validated: "2026-11-16"
 ---
 
 # Phase 11 — Validation Strategy
@@ -40,16 +41,16 @@ created: "2026-11-16"
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 11-01-01 | 01 | 1 | ABOUT-01, ABOUT-02, NAV-01, SEO-01, QA-01 | T-11-SC | `npm ci` from lockfile only | unit (render) | `npm test -- src/__tests__/about.test.tsx src/__tests__/components.test.tsx` | ❌ W0 (created by this task) | ⬜ pending |
-| 11-01-02 | 01 | 1 | ABOUT-05, QA-01 | — | N/A | unit (render + src scan) | `npm test -- src/__tests__/legacy-links.test.ts src/__tests__/about.test.tsx src/__tests__/components.test.tsx src/__tests__/members.test.ts` | ❌ W0 (legacy-links.test.ts created by this task) | ⬜ pending |
-| 11-01-03 | 01 | 1 | NAV-02, LINK-03, QA-01 | T-11-01 | hop matches only two exact hashes; never copies the hash into the target | unit (render + pure fn) | `npm test -- src/__tests__/about.test.tsx src/__tests__/legacy-links.test.ts` | ✅ (from 11-01-01/02) | ⬜ pending |
-| 11-02-01 | 02 | 1 | ABOUT-06, SEO-01, QA-01 | T-11-04 | absolute production canonical per profile | unit (async page render) | `npm test -- src/__tests__/profile.test.tsx src/__tests__/components.test.tsx src/__tests__/members.test.ts` | ❌ W0 (created by this task) | ⬜ pending |
-| 11-02-02 | 02 | 1 | SEO-02 | T-11-03 | no member page in sitemap | unit | `npm test -- src/__tests__/profile.test.tsx` | ✅ (from 11-02-01) | ⬜ pending |
-| 11-03-01 | 03 | 1 | LINK-01, LINK-02 | T-11-06 | explicit 301 on every rule | unit (file parse) | `npm test -- src/__tests__/redirects.test.ts` | ❌ W0 (created by this task) | ⬜ pending |
-| 11-03-02 | 03 | 1 | LINK-04, QA-01 | T-11-06, T-11-07 | no splat, no loop, same-origin destinations, unique sources (mutation-proven) | unit (file parse) | `npm test -- src/__tests__/redirects.test.ts src/__tests__/members.test.ts` | ✅ (from 11-03-01) | ⬜ pending |
-| 11-04-01 | 04 | 2 | all (local gate) | T-11-SC | CI-equivalent gate before any push | lint + typecheck + test + build + out/ checks | `npm run lint && npm run typecheck && npm test && rm -rf out && npm run build` | n/a | ⬜ pending |
-| 11-04-02 | 04 | 2 | — (human push) | T-11-08 | push to a non-main branch only (ADR-002) | manual checkpoint | n/a | n/a | ⬜ pending |
-| 11-04-03 | 04 | 2 | LINK-01..04, ABOUT-02, ABOUT-06, NAV-01 | T-11-08 | production and `main` untouched | preview curl matrix + git check + human-checks | see 11-04-PLAN.md Task 3 | n/a | ⬜ pending |
+| 11-01-01 | 01 | 1 | ABOUT-01, ABOUT-02, NAV-01, SEO-01, QA-01 | T-11-SC | `npm ci` from lockfile only | unit (render) | `npm test -- src/__tests__/about.test.tsx src/__tests__/components.test.tsx` | ❌ W0 (created by this task) | ✅ green |
+| 11-01-02 | 01 | 1 | ABOUT-05, QA-01 | — | N/A | unit (render + src scan) | `npm test -- src/__tests__/legacy-links.test.ts src/__tests__/about.test.tsx src/__tests__/components.test.tsx src/__tests__/members.test.ts` | ❌ W0 (legacy-links.test.ts created by this task) | ✅ green |
+| 11-01-03 | 01 | 1 | NAV-02, LINK-03, QA-01 | T-11-01 | hop matches only two exact hashes; never copies the hash into the target | unit (render + pure fn) | `npm test -- src/__tests__/about.test.tsx src/__tests__/legacy-links.test.ts` | ✅ (hop render + `location.replace` assertions added by validate-phase) | ✅ green |
+| 11-02-01 | 02 | 1 | ABOUT-06, SEO-01, QA-01 | T-11-04 | absolute production canonical per profile | unit (async page render) | `npm test -- src/__tests__/profile.test.tsx src/__tests__/components.test.tsx src/__tests__/members.test.ts` | ❌ W0 (created by this task) | ✅ green |
+| 11-02-02 | 02 | 1 | SEO-02 | T-11-03 | no member page in sitemap | unit | `npm test -- src/__tests__/profile.test.tsx` | ✅ (from 11-02-01) | ✅ green |
+| 11-03-01 | 03 | 1 | LINK-01, LINK-02 | T-11-06 | explicit 301 on every rule | unit (file parse) | `npm test -- src/__tests__/redirects.test.ts` | ❌ W0 (created by this task) | ✅ green |
+| 11-03-02 | 03 | 1 | LINK-04, QA-01 | T-11-06, T-11-07 | no splat, no loop, same-origin destinations, unique sources (mutation-proven) | unit (file parse) | `npm test -- src/__tests__/redirects.test.ts src/__tests__/members.test.ts` | ✅ (from 11-03-01) | ✅ green |
+| 11-04-01 | 04 | 2 | all (local gate) | T-11-SC | CI-equivalent gate before any push | lint + typecheck + test + build + out/ checks | `npm run lint && npm run typecheck && npm test && rm -rf out && npm run build` | n/a | ✅ green |
+| 11-04-02 | 04 | 2 | — (human push) | T-11-08 | push to a non-main branch only (ADR-002) | manual checkpoint | n/a | n/a | ✅ done (user pushed to `main` by decision, see 11-04-SUMMARY) |
+| 11-04-03 | 04 | 2 | LINK-01..04, ABOUT-02, ABOUT-06, NAV-01 | T-11-08 | production and `main` untouched | preview curl matrix + git check + human-checks | see 11-04-PLAN.md Task 3 | n/a | ✅ done (matrix ran against production, MATRIX_FAIL=0) |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -59,11 +60,11 @@ created: "2026-11-16"
 
 ## Wave 0 Requirements
 
-- [ ] `npm ci` when `node_modules/.bin/vitest` is missing: Step 0 of the first task in every plan (each worktree starts without `node_modules`)
-- [ ] `src/__tests__/about.test.tsx` (11-01-01): ABOUT-01/02/05, NAV-02, SEO-01, em dash, teaser/Mission drift guard
-- [ ] `src/__tests__/legacy-links.test.ts` (11-01-02, 11-01-03): internal-link scan (QA-01), `legacyHashTarget` (LINK-03)
-- [ ] `src/__tests__/profile.test.tsx` (11-02-01, 11-02-02): ABOUT-06, SEO-01/02, em dash
-- [ ] `src/__tests__/redirects.test.ts` (11-03-01, 11-03-02): LINK-01, LINK-02, LINK-04, QA-01
+- [x] `npm ci` when `node_modules/.bin/vitest` is missing: Step 0 of the first task in every plan (each worktree starts without `node_modules`)
+- [x] `src/__tests__/about.test.tsx` (11-01-01): ABOUT-01/02/05, NAV-02, SEO-01, em dash, teaser/Mission drift guard
+- [x] `src/__tests__/legacy-links.test.ts` (11-01-02, 11-01-03): internal-link scan (QA-01), `legacyHashTarget` (LINK-03)
+- [x] `src/__tests__/profile.test.tsx` (11-02-01, 11-02-02): ABOUT-06, SEO-01/02, em dash
+- [x] `src/__tests__/redirects.test.ts` (11-03-01, 11-03-02): LINK-01, LINK-02, LINK-04, QA-01
 
 No framework install needed.
 
@@ -79,17 +80,25 @@ No framework install needed.
 | Headings clear fixed nav | ABOUT-02 | Visual | Open `/about#mission`, `#history`, `#team`; heading fully visible below nav |
 | Nav fits at 320px | NAV-01 (UI-SPEC backstop) | Visual | Nav row does not wrap; else apply UI-SPEC backstop CSS |
 | Profile card not lower than today | ABOUT-06 (UI-SPEC backstop, D-15) | Visual | Photo top ≤ 112px from viewport top at desktop and 375px |
-| Trailing slash / printed card URL | LINK-01 | Undocumented Cloudflare behaviour | Observe `/team/<slug>/` and the exact business-card URL; add rules if 404 |
+| Trailing slash / printed card URL | LINK-01 | Undocumented Cloudflare behaviour | Production returned 404 for `/team/<slug>/`; fixed by 8c5259c (7 trailing-slash 301 rules, guarded by `redirects.test.ts` "has /team/<slug> and /team/<slug>/ rules for every member"). Still to do live: re-curl `/team/<slug>/` after deploy and confirm the exact printed card URL form (`www.` has no DNS record) |
 
 ---
 
 ## Validation Sign-Off
 
-- [ ] All tasks have `<automated>` verify or Wave 0 dependencies
-- [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all MISSING references
-- [ ] No watch-mode flags
-- [ ] Feedback latency < 30s
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] All tasks have `<automated>` verify or Wave 0 dependencies
+- [x] Sampling continuity: no 3 consecutive tasks without automated verify
+- [x] Wave 0 covers all MISSING references
+- [x] No watch-mode flags
+- [x] Feedback latency < 30s
+- [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved 2026-11-16 (validate-phase; 11-04-02/03 are manual or live by nature and were completed against production)
+
+## Validation Audit 2026-11-16
+
+| Metric | Count |
+|---|---|
+| Gaps found | 1 |
+| Resolved | 1 |
+| Escalated | 0 |
