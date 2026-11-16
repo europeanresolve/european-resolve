@@ -4,7 +4,7 @@ import styles from "./MemberCard.module.css";
 
 export function MemberCard({ member }: { member: Member }) {
   return (
-    <Link href={`/team/${member.slug}`} className={styles.card}>
+    <Link href={`/about/team/${member.slug}`} className={styles.card}>
       <img
         src={member.photo}
         alt={member.name}
