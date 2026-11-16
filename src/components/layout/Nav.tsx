@@ -9,7 +9,7 @@ export function Nav() {
           European Resolve
         </Link>
         <div className={styles.links}>
-          <Link href="/#team">Team</Link>
+          <Link href="/about">About us</Link>
           <Link href="/events">Events</Link>
         </div>
       </nav>

@@ -84,9 +84,13 @@ describe("Nav", () => {
     expect(screen.getByText("European Resolve")).toBeInTheDocument();
   });
 
-  it("renders Team link", () => {
+  it("renders About us link", () => {
     render(<Nav />);
-    expect(screen.getByText("Team")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "About us" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(screen.queryByText("Team")).toBeNull();
   });
 
   it("renders Events link", () => {
