@@ -132,10 +132,10 @@ describe("MemberCard", () => {
     expect(img).toHaveAttribute("src", "/team/test-person.png");
   });
 
-  it("links to /team/{slug}", () => {
+  it("links to /about/team/{slug}", () => {
     render(<MemberCard member={testMember} />);
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "/team/test-person");
+    expect(link).toHaveAttribute("href", "/about/team/test-person");
   });
 });
 

@@ -66,6 +66,15 @@ describe("/about page", () => {
     ).toEqual(members.map((m) => m.name));
   });
 
+  it("links every Team card to /about/team/<slug>, distinct, in members order", () => {
+    const { container } = render(<AboutPage />);
+    const hrefs = Array.from(
+      container.querySelectorAll("section#team a"),
+    ).map((a) => a.getAttribute("href"));
+    expect(hrefs).toEqual(members.map((m) => "/about/team/" + m.slug));
+    expect(new Set(hrefs).size).toBe(members.length);
+  });
+
   it("exports title, description and canonical metadata", () => {
     expect(metadata.title).toBe("About us | European Resolve");
     expect(metadata.description).toBe(
