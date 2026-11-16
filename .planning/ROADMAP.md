@@ -49,7 +49,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   3. `curl -sI` against the preview deploy shows `/team/<slug>` returning 301 to `/about/team/<slug>` for all 7 members, `/team` and `/team/` returning 301 to `/about#team`, and `/team/<slug>.png` returning 200 with no redirect; opening `/#team` lands on `/about#team` and Back skips the `/#team` entry.
   4. `/about` and each profile page carry a title, description and canonical URL at the new address, and the sitemap lists `/about` with no member pages.
   5. `npm test` fails if a member has no `/team/<slug>` redirect line, a `/team/*` splat exists, any rule lacks an explicit 301, an internal `/#team` link exists, or About copy or metadata contains an em dash; `main` and european-resolve.org are untouched at phase end.
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans executed
 
 Plans:
 **Wave 1**
@@ -61,7 +61,7 @@ Plans:
 - [x] 11-04-PLAN.md — Local release gate, human push to a feature branch, Cloudflare preview curl matrix, production-untouched check
 
 **Gap closure** *(from 11-VERIFICATION.md: nav wraps to 96px at 320px and covers profile breadcrumbs)*
-- [ ] 11-05-PLAN.md — Single-line nav at 320px (nowrap links, 22.5rem media query), Nav CSS source guard, Playwright layout measurement, human push and production re-measure
+- [x] 11-05-PLAN.md — Single-line nav at 320px (nowrap links, 22.5rem media query), Nav CSS source guard, Playwright layout measurement, human push and production re-measure
 
 **UI hint**: yes
 
@@ -82,7 +82,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1-10 | v1.0 | see archive | Complete | 2026-11-14 |
-| 11. About section mechanics | v1.1 | 4/5 | In Progress | - |
+| 11. About section mechanics | v1.1 | 5/5 | In Progress | - |
 | 12. Final copy, legal footer and release | v1.1 | 0/TBD | Not started | - |
 
 ---

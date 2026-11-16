@@ -4,17 +4,17 @@ milestone: v1.1
 milestone_name: About Us
 current_phase: 11
 current_phase_name: About section mechanics (feature branch)
-status: executing
-stopped_at: Completed 11-04-PLAN.md
-last_updated: "2026-11-16T09:19:25.624Z"
+status: verifying
+stopped_at: Completed 11-05-PLAN.md
+last_updated: "2026-11-16T09:24:15.862Z"
 last_activity: 2026-11-16
 last_activity_desc: Phase 11 execution started
-state_head: 29119f020f80347545fea4b5e00e1365d7655a72
+state_head: 37263d0e6dee879f7466f917cc8cb254db71acf6
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 0
 ---
 
@@ -29,9 +29,9 @@ See: .planning/PROJECT.md (updated 2026-11-15)
 
 ## Current Position
 
-Phase: 11 (About section mechanics (feature branch)) — READY TO EXECUTE
-Plan: 4 of 4
-Status: Ready to execute
+Phase: 11 (About section mechanics (feature branch)) — EXECUTING
+Plan: 5 of 5
+Status: Phase complete — ready for verification
 Last activity: 2026-11-16 — Phase 11 execution started
 
 Progress: [░░░░░░░░░░] 0%
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 11 P02 | 4 min | 2 tasks | 5 files |
 | Phase 11 P03 | 3min | 2 tasks | 4 files |
 | Phase 11 P04 | 59 min | 3 tasks | 0 files |
+| Phase 11 P05 | 20min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,7 @@ Recent decisions affecting current work:
 - [Phase 11]: 11-03: _redirects guard compares one-line 'from to code' strings and rejects protocol-relative //host destinations; Task 2 RED was mutation-proven (splat, missing member, missing 301)
 - [Phase 11]: User deployed phase 11 to production (main a5a36ee) instead of a non-main preview, superseding D-02; 11-04 curl matrix 26/26 pass on european-resolve.org
 - [Phase 11]: Trailing-slash /team/<slug>/ 404s on production; fix (7 /team/<slug>/ 301 rules) routed to /gsd-plan-phase 11 --gaps
+- [Phase 11]: 11-05: nav wordmark 1rem at max-width 22.5rem (not UI-SPEC 1.125rem, which measured 90.6px tall at 320px); header 58.6px at 320px, 65px above
 
 ### Pending Todos
 
@@ -100,6 +102,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-16T08:33:48.074Z
-Stopped at: Completed 11-04-PLAN.md
+Last session: 2026-11-16T09:24:15.836Z
+Stopped at: Completed 11-05-PLAN.md
 Resume file: None
