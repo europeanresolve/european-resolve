@@ -5,6 +5,7 @@ import TeamMemberPage, {
   generateStaticParams,
 } from "@/app/about/team/[slug]/page";
 import { members } from "@/data/members";
+import sitemap from "@/app/sitemap";
 
 vi.mock("next/link", () => ({
   default: ({
@@ -83,5 +84,24 @@ describe("profile page", () => {
   it("unknown slug yields empty metadata and notFound", async () => {
     expect(await generateMetadata(params("no-such-member"))).toEqual({});
     await expect(TeamMemberPage(params("no-such-member"))).rejects.toThrow();
+  });
+});
+
+describe("sitemap", () => {
+  const urls = sitemap().map((e) => e.url);
+
+  it("lists /about exactly once", () => {
+    expect(
+      urls.filter((u) => u === "https://european-resolve.org/about"),
+    ).toHaveLength(1);
+  });
+
+  it("lists no member page", () => {
+    expect(urls.filter((u) => u.includes("/team"))).toEqual([]);
+  });
+
+  it("has 6 unique URLs", () => {
+    expect(urls).toHaveLength(6);
+    expect(new Set(urls).size).toBe(urls.length);
   });
 });
