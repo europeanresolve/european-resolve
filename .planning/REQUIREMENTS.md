@@ -9,17 +9,17 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 
 ### About page
 
-- [ ] **ABOUT-01**: Visitor can open `/about` and read Mission, History, and Team sections, in that order
+- [x] **ABOUT-01**: Visitor can open `/about` and read Mission, History, and Team sections, in that order
 - [ ] **ABOUT-02**: Each section has a stable anchor (`#mission`, `#history`, `#team`); jumping to one keeps its heading visible below the fixed nav
 - [ ] **ABOUT-03**: Mission section shows the final org-supplied mission copy
 - [ ] **ABOUT-04**: History section shows the org-supplied history copy
-- [ ] **ABOUT-05**: Team section shows every member as a card linking to `/about/team/<slug>`
+- [x] **ABOUT-05**: Team section shows every member as a card linking to `/about/team/<slug>`
 - [ ] **ABOUT-06**: Visitor can open a member profile at `/about/team/<slug>` (business card and QR unchanged) with breadcrumbs Home > About us > Name
 
 ### Navigation & homepage
 
 - [ ] **NAV-01**: Main nav shows "About us" linking to `/about`, replacing "Team"
-- [ ] **NAV-02**: Homepage shows a short mission teaser linking to `/about`; the About and Team blocks are no longer on the homepage
+- [x] **NAV-02**: Homepage shows a short mission teaser linking to `/about`; the About and Team blocks are no longer on the homepage
 
 ### Legacy links
 
@@ -71,14 +71,14 @@ Release is gated on org-supplied content: Mission copy, History copy, and footer
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ABOUT-01 | Phase 11 | Pending |
+| ABOUT-01 | Phase 11 | Complete |
 | ABOUT-02 | Phase 11 | Pending |
 | ABOUT-03 | Phase 12 | Pending |
 | ABOUT-04 | Phase 12 | Pending |
-| ABOUT-05 | Phase 11 | Pending |
+| ABOUT-05 | Phase 11 | Complete |
 | ABOUT-06 | Phase 11 | Pending |
 | NAV-01 | Phase 11 | Pending |
-| NAV-02 | Phase 11 | Pending |
+| NAV-02 | Phase 11 | Complete |
 | LINK-01 | Phase 11 | Pending |
 | LINK-02 | Phase 11 | Pending |
 | LINK-03 | Phase 11 | Pending |

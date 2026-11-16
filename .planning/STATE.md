@@ -5,16 +5,16 @@ milestone_name: About Us
 current_phase: 11
 current_phase_name: About section mechanics (feature branch)
 status: executing
-stopped_at: Phase 11 UI-SPEC approved
-last_updated: "2026-11-16T06:05:35.666Z"
-last_activity: 2026-11-15
-last_activity_desc: v1.1 roadmap created (2 phases, 17/17 requirements mapped)
-state_head: 2464f51dba722f010badd7460a67d8a51c8e7c0a
+stopped_at: Completed 11-01-PLAN.md
+last_updated: "2026-11-16T06:21:55.738Z"
+last_activity: 2026-11-16
+last_activity_desc: Phase 11 execution started
+state_head: a77f84dd9a7c4076f5d3ec3ac010bf085763f532
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 4
-  completed_plans: 0
+  completed_plans: 1
   percent: 0
 ---
 
@@ -25,14 +25,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-11-15)
 
 **Core value:** european-resolve.org is a credible, transparent public face for the organisation: mission, people and work in one place. Links to team pages and assets keep working.
-**Current focus:** Phase 11: About section mechanics (feature branch)
+**Current focus:** Phase 11 — About section mechanics (feature branch)
 
 ## Current Position
 
-Phase: 11 (About section mechanics (feature branch)) — READY TO EXECUTE
-Plan: 0 of TBD in current phase
+Phase: 11 (About section mechanics (feature branch)) — EXECUTING
+Plan: 2 of 4
 Status: Ready to execute
-Last activity: 2026-11-15 — v1.1 roadmap created (2 phases, 17/17 requirements mapped)
+Last activity: 2026-11-16 — Phase 11 execution started
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -50,6 +50,11 @@ Progress: [░░░░░░░░░░] 0%
 | - | - | - | - |
 
 *Updated after each plan completion*
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 11 P01 | 4 min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -63,6 +68,8 @@ Recent decisions affecting current work:
 - [v1.1]: Photo strategy Option B. Photos stay at `public/team/`; 7 explicit `/team/<slug>` 301 lines plus exact `/team` and `/team/` rules; no splat.
 - [v1.1]: `/#team` handled by a client-side `location.replace` hop on `/`; nav links straight to `/about`.
 - [v1.1]: Sitemap lists `/about` only; member pages stay unlisted (ADR-005).
+- [Phase 11]: Legacy hash hop uses a Map lookup so prototype-like hashes (#constructor, #__proto__) return null
+- [Phase 11]: TDD RED commits may carry a minimal stub so RED fails on assertions, not missing imports
 
 ### Pending Todos
 
@@ -84,6 +91,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-16T05:28:54.050Z
-Stopped at: Phase 11 UI-SPEC approved
-Resume file: .planning/phases/11-about-section-mechanics-feature-branch/11-UI-SPEC.md
+Last session: 2026-11-16T06:21:55.721Z
+Stopped at: Completed 11-01-PLAN.md
+Resume file: None
