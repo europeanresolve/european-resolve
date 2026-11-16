@@ -1,2 +1,15 @@
 # Short URL for participant fundraising pages
 /r4u/:slug /events/2026-run-for-ukraine/fundraise/:slug 301
+
+# v1.1: team moved under /about. Printed business cards and email signatures link to /team/<slug>: never delete these lines.
+# Photos stay at /team/<slug>.png, so no /team splat (Cloudflare applies redirects even when an asset exists).
+# A departed member keeps their line, repointed to /about#team if their profile is removed.
+/team /about#team 301
+/team/ /about#team 301
+/team/michael-desloover /about/team/michael-desloover 301
+/team/liza-bezvershenko /about/team/liza-bezvershenko 301
+/team/olena-kuzhym /about/team/olena-kuzhym 301
+/team/benjamin-lemerle /about/team/benjamin-lemerle 301
+/team/ivan-zinchenko /about/team/ivan-zinchenko 301
+/team/serhiy-onyshchenko /about/team/serhiy-onyshchenko 301
+/team/marco-melega /about/team/marco-melega 301
