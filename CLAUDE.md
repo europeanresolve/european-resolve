@@ -188,8 +188,9 @@ The `european-resolve.org` website of European Resolve (Brussels-based civil soc
 | Entry | Route | Rendering |
 |-------|-------|-----------|
 | Home | `/` | Static (server component) |
+| About | `/about` | Static (server component) |
 | Events | `/events` | Static with client-side refresh |
-| Team Member | `/team/[slug]` | Static via `generateStaticParams()` |
+| Team Member | `/about/team/[slug]` | Static via `generateStaticParams()` |
 | Privacy | `/privacy` | Static (server component) |
 ## Server vs Client Components
 | Component | Type | Reason |
