@@ -19,9 +19,11 @@ describe("_redirects", () => {
     expect(rules.length).toBeGreaterThanOrEqual(10);
   });
 
-  it("has a /team/<slug> rule for every member", () => {
+  it("has /team/<slug> and /team/<slug>/ rules for every member", () => {
     for (const m of members) {
       expect(lines).toContain(`/team/${m.slug} /about/team/${m.slug} 301`);
+      // The trailing-slash form 404ed in production without its own rule.
+      expect(lines).toContain(`/team/${m.slug}/ /about/team/${m.slug} 301`);
     }
   });
 
