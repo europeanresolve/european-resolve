@@ -34,7 +34,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 **Release rule:** Every push to `main` deploys to production (Cloudflare Pages). Nothing from this milestone is user-visible until Mission copy, History copy, and footer legal data are all in hand. Phase 11 lives on a feature branch and is verified on a Cloudflare preview deploy only. Phase 12 is the single merge to `main`, so the route move and `_redirects` go live in the same deploy.
 
-- [ ] **Phase 11: About section mechanics (feature branch)** - `/about`, profile route move, redirects, nav, homepage teaser, SEO and guard tests, verified on a preview deploy; not merged
+- [x] **Phase 11: About section mechanics (feature branch)** - `/about`, profile route move, redirects, nav, homepage teaser, SEO and guard tests, verified on a preview deploy; not merged (completed 2026-11-16)
 - [ ] **Phase 12: Final copy, legal footer and release** - Org-supplied Mission, History and legal data dropped in, preview re-verified, one merge to `main`
 
 ## Phase Details
@@ -49,7 +49,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   3. `curl -sI` against the preview deploy shows `/team/<slug>` returning 301 to `/about/team/<slug>` for all 7 members, `/team` and `/team/` returning 301 to `/about#team`, and `/team/<slug>.png` returning 200 with no redirect; opening `/#team` lands on `/about#team` and Back skips the `/#team` entry.
   4. `/about` and each profile page carry a title, description and canonical URL at the new address, and the sitemap lists `/about` with no member pages.
   5. `npm test` fails if a member has no `/team/<slug>` redirect line, a `/team/*` splat exists, any rule lacks an explicit 301, an internal `/#team` link exists, or About copy or metadata contains an em dash; `main` and european-resolve.org are untouched at phase end.
-**Plans:** 5/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 **Wave 1**
@@ -82,7 +82,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1-10 | v1.0 | see archive | Complete | 2026-11-14 |
-| 11. About section mechanics | v1.1 | 5/5 | In Progress | - |
+| 11. About section mechanics | v1.1 | 5/5 | Complete    | 2026-11-16 |
 | 12. Final copy, legal footer and release | v1.1 | 0/TBD | Not started | - |
 
 ---

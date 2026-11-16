@@ -2,20 +2,20 @@
 gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: About Us
-current_phase: 11
-current_phase_name: About section mechanics (feature branch)
-status: verifying
-stopped_at: Completed 11-05-PLAN.md
-last_updated: "2026-11-16T09:24:15.862Z"
+current_phase: 12
+current_phase_name: Final copy, legal footer and release
+status: planning
+stopped_at: Phase 11 complete, ready to plan Phase 12
+last_updated: "2026-11-16T09:29:17.423Z"
 last_activity: 2026-11-16
-last_activity_desc: Phase 11 execution started
-state_head: 37263d0e6dee879f7466f917cc8cb254db71acf6
+last_activity_desc: Phase 11 complete, transitioned to Phase 12
+state_head: 3ace45f8558c77949de8f29b95a860a61e1ac335
 progress:
   total_phases: 2
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 5
   completed_plans: 5
-  percent: 0
+  percent: 50
 ---
 
 # Project State
@@ -29,17 +29,17 @@ See: .planning/PROJECT.md (updated 2026-11-15)
 
 ## Current Position
 
-Phase: 11 (About section mechanics (feature branch)) — EXECUTING
-Plan: 5 of 5
-Status: Phase complete — ready for verification
-Last activity: 2026-11-16 — Phase 11 execution started
+Phase: 12 — Final copy, legal footer and release
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-11-16 — Phase 11 complete, transitioned to Phase 12
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0 (v1.1)
+- Total plans completed: 5 (v1.1)
 - Average duration: -
 - Total execution time: -
 
@@ -47,7 +47,7 @@ Progress: [░░░░░░░░░░] 0%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 11 | 5 | - | - |
 
 *Updated after each plan completion*
 **Per-Plan Metrics:**
@@ -103,5 +103,5 @@ Items acknowledged and deferred at milestone close, most recent first:
 ## Session Continuity
 
 Last session: 2026-11-16T09:24:15.836Z
-Stopped at: Completed 11-05-PLAN.md
+Stopped at: Phase 11 complete, ready to plan Phase 12
 Resume file: None
